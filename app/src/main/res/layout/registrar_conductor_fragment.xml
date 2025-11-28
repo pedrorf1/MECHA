@@ -50,7 +50,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <!-- CONTENEDOR PARA AÑADIR FORMULARIOS DE VEHÍCULOS -->
         <LinearLayout
             android:id="@+id/contenedorVehiculos"
             android:orientation="vertical"
