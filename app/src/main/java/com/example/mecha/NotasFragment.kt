@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
-class NotasFragment : Fragment() {
+class NotasFragment : Fragment(R.layout.fragment_notas) {
 
     private lateinit var etTitulo: EditText
     private lateinit var etContenido: EditText
