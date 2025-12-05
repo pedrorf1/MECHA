@@ -16,13 +16,10 @@ class PinicialFragment: Fragment(R.layout.pinicial_fragment) {
         val btnInfoPerfil = view.findViewById<ImageButton>(R.id.btnInfoPerfil)
         val btnBuscarM = view.findViewById<ImageButton>(R.id.btnBuscarM)
 
-        btnNotas.setOnClickListener {
-            val notasFragment = NotasFragment()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.FragmentsInside, notasFragment)
-                .addToBackStack(null)
-                .commit()
+        btnInicio.setOnClickListener {
+
         }
+
 
 
     }
