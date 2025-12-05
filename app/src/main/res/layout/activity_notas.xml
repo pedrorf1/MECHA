@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTituloPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/etTituloNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título de la nota" />
+
+    <EditText
+        android:id="@+id/etContenidoNota"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="top"
+        android:hint="Escribe tu nota aquí"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnGuardarNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Nota"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tvNotaGuardadaTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nota guardada:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/tvNotaGuardada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aquí aparecerá la nota guardada..."
+        android:paddingTop="10dp"/>
+</LinearLayout>
