@@ -14,7 +14,7 @@ import com.example.mecha.models.Conductor
 import com.example.mecha.models.Vehiculo
 import org.json.JSONArray
 import org.json.JSONObject
-//juan
+//juan correccion
 class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragment) {
 
     private lateinit var edtCorreo: EditText
