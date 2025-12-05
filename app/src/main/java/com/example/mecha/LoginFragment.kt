@@ -44,9 +44,7 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
                     Method.POST, url,
                     { response ->
                         if (response.trim() == "success") {
-                            val intent = Intent(requireContext(), MenuActivity::class.java)
-                            startActivity(intent)
-                            requireActivity().finish()
+                            tvdatos.text = "Success"
                         } else {
                             tvdatos.text = "Datos incorrectos"
                         }
