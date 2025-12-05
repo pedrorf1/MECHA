@@ -15,7 +15,6 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-//juan correccion
 class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragment) {
 
     private lateinit var edtCorreo: EditText
