@@ -38,10 +38,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/edtTipo"
-        android:hint="Tipo (Carro / Motocicleta)"
+    <CheckBox
+        android:id="@+id/carro"
+        android:text="Carro"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/moto"
+        android:text="Motocicleta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
