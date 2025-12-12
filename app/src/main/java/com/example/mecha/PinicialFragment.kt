@@ -16,9 +16,6 @@ class PinicialFragment: Fragment(R.layout.pinicial_fragment) {
         val btnInfoPerfil = view.findViewById<ImageButton>(R.id.btnInfoPerfil)
         val btnBuscarM = view.findViewById<ImageButton>(R.id.btnBuscarM)
 
-        btnInicio.setOnClickListener {
-
-        }
 
 
 
