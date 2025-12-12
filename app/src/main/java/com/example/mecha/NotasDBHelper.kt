@@ -1,5 +1,5 @@
 package com.example.mecha
-//HEEDY
+
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
