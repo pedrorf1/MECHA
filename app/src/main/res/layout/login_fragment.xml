@@ -1,76 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/mecha_gray_light">
 
-
+    <!-- Campo correo -->
     <EditText
         android:id="@+id/edtCorreo"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="150dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/input_mecha"
         android:hint="Correo"
+        android:padding="15dp"
+        android:textColor="@color/mecha_gray_dark"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Campo contraseña -->
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="30dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_mecha"
         android:hint="Contraseña"
+        android:padding="15dp"
+        android:textColor="@color/mecha_gray_dark"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/edtCorreo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+
+    <!-- Botón iniciar sesión -->
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="30dp"
-        android:text="Iniciar sesión"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="28dp"
+        android:text="INICIAR SESIÓN"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@color/mecha_white"
+        android:backgroundTint="@color/mecha_primary"
         app:layout_constraintTop_toBottomOf="@id/edtPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+
+    <!-- Texto errores (si los hay) -->
     <TextView
         android:id="@+id/tvDatos"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:text=""
         android:textColor="@color/red"
-        android:textSize="20sp"
+        android:textSize="16sp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+
+    <!-- Texto de registro -->
     <TextView
         android:id="@+id/msjRegistro"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:padding="10dp"
-        android:text="¿Aun no tienes cuenta? ¡¡¡Registrate!!!"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:paddingTop="32dp"
+        android:text="¿Aún no tienes cuenta?\n¡Regístrate!"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/mecha_gray_dark"
         app:layout_constraintTop_toBottomOf="@id/tvDatos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Botón de registro -->
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="Registrate"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="90dp"
+        android:layout_marginTop="20dp"
+        android:text="REGISTRARSE"
+        android:textColor="@color/mecha_white"
+        android:backgroundTint="@color/mecha_primary_dark"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/msjRegistro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

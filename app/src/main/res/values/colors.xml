@@ -10,9 +10,14 @@
     <color name="red">#FF0000</color>
     <color name="gris_fuerte">#515151</color>
     <color name="gris_claro">#8c8c8c</color>
-    <color name="rosa_o">#C2185B</color>
-    <color name="rosa_o2">#F06292</color>
-    <color name="rosa_o3">#880E4F</color>
+    <color name="mecha_primary">#E66924</color>
+    <color name="mecha_primary_dark">#C4551E</color>
+    <color name="mecha_accent">#FFBE7B</color>
+
+    <color name="mecha_white">#FFFFFF</color>
+    <color name="mecha_gray_light">#F5F5F5</color>
+    <color name="mecha_gray_dark">#222222</color>
+
 
 
 </resources>

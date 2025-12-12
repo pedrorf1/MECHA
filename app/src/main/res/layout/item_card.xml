@@ -1,59 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:layout_margin="16dp"
-android:padding="16dp">
-
-<LinearLayout
     android:layout_width="match_parent"
-    android:id="@+id/cardfragment"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/gris_fuerte">
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    card_view:cardCornerRadius="18dp"
+    card_view:cardElevation="10dp"
+    android:padding="0dp"
+    android:backgroundTint="@android:color/transparent">
 
-    <Button
-        android:id="@+id/btncerrar"
-        android:layout_width="50dp"
+    <LinearLayout
+        android:id="@+id/cardfragment"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="X"
-        android:backgroundTint="@color/teal_700"
-        android:textColor="@android:color/white"
-        android:layout_gravity="right"/>
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/mecha_gray_light">
 
+        <!-- Botón cerrar -->
+        <Button
+            android:id="@+id/btncerrar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:text="✕"
+            android:textSize="14sp"
+            android:background="@drawable/rounded_close_button"
+            android:textColor="@color/mecha_white"
+            android:layout_gravity="end"/>
 
-    <TextView
-        android:layout_marginTop="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registro de Usuarios"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:paddingBottom="12dp"
-        android:textColor="@color/black"/>
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Usuarios"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/mecha_gray_dark"
+            android:paddingTop="10dp"
+            android:paddingBottom="25dp" />
 
-    <Button
-        android:id="@+id/btnRegistrarMecanico"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:text="Registrar Mecánico"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="8dp"
-        android:layout_gravity="center"/>
+        <!-- Botón Registrar Mecánico -->
+        <Button
+            android:id="@+id/btnRegistrarMecanico"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Registrar Mecánico"
+            android:backgroundTint="@color/mecha_primary"
+            android:textColor="@color/mecha_white"
+            android:layout_marginBottom="12dp"
+            android:elevation="6dp"
+            android:padding="10dp" />
 
-    <Button
-        android:id="@+id/btnRegistrarConductor"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:text="Registrar Conductor"
-        android:backgroundTint="@color/teal_700"
-        android:textColor="@android:color/white"
-        android:layout_gravity="center"/>
+        <!-- Botón Registrar Conductor -->
+        <Button
+            android:id="@+id/btnRegistrarConductor"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Registrar Conductor"
+            android:backgroundTint="@color/mecha_primary_dark"
+            android:textColor="@color/mecha_white"
+            android:elevation="6dp"
+            android:padding="10dp" />
 
-</LinearLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
