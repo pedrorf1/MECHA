@@ -6,16 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class NotasFragment : Fragment(R.layout.fragment_notas) {
 
-    private lateinit var etTitulo: EditText
-    private lateinit var etContenido: EditText
-    private lateinit var tvUltimaNota: TextView
+    private lateinit var edtTitulo: EditText
+    private lateinit var edtDescripcion: EditText
     private lateinit var btnGuardar: Button
+    private lateinit var btnEditar: Button
+    private lateinit var btnBorrar: Button
+    private lateinit var btnVer: Button
     private lateinit var db: NotasDBHelper
 
     override fun onCreateView(
@@ -29,34 +30,51 @@ class NotasFragment : Fragment(R.layout.fragment_notas) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        etTitulo = view.findViewById(R.id.etTitulo)
-        etContenido = view.findViewById(R.id.etContenido)
-        tvUltimaNota = view.findViewById(R.id.tvUltimaNota)
+        edtTitulo = view.findViewById(R.id.edtTitulo)
+        edtDescripcion = view.findViewById(R.id.edtDescripcion)
         btnGuardar = view.findViewById(R.id.btnGuardar)
-
+        btnEditar = view.findViewById(R.id.btnEditar)
+        btnBorrar = view.findViewById(R.id.btnBorrar)
+        btnVer = view.findViewById(R.id.btnVer)
         db = NotasDBHelper(requireContext())
 
-        tvUltimaNota.text = db.obtenerUltimaNota()
-
         btnGuardar.setOnClickListener {
-            val titulo = etTitulo.text.toString()
-            val contenido = etContenido.text.toString()
+            val t = edtTitulo.text.toString()
+            val d = edtDescripcion.text.toString()
 
-            if (titulo.isEmpty() || contenido.isEmpty()) {
-                Toast.makeText(requireContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            val resultado = db.insertarNota(titulo, contenido)
-
-            if (resultado > 0) {
-                Toast.makeText(requireContext(), "Nota guardada", Toast.LENGTH_SHORT).show()
-                tvUltimaNota.text = db.obtenerUltimaNota()
-                etTitulo.setText("")
-                etContenido.setText("")
+            if (t.isEmpty() || d.isEmpty()) {
+                Toast.makeText(requireContext(), "Completa todo", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(requireContext(), "Error al guardar", Toast.LENGTH_SHORT).show()
+                val ok = db.insertarNota(t, d)
+                Toast.makeText(requireContext(),
+                    if (ok) {
+                        "Nota guardada"
+                    } else {
+                        "Error"
+                    }, Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnEditar.setOnClickListener {
+            val ok = db.updateNota(
+                edtTitulo.text.toString(),
+                edtDescripcion.text.toString()
+            )
+            Toast.makeText(requireContext(),
+                if (ok) "Nota actualizada" else "No existe", Toast.LENGTH_SHORT).show()
+        }
+
+        btnBorrar.setOnClickListener {
+            val ok = db.deleteNota(edtTitulo.text.toString())
+            Toast.makeText(requireContext(),
+                if (ok) "Nota eliminada" else "No existe", Toast.LENGTH_SHORT).show()
+        }
+
+        btnVer.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.FragmentsInside, VerNotasFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 }

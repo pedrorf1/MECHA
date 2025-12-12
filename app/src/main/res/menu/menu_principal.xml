@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_inicio"
+        android:title="@string/menu_inicio"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_notas"
+        android:title="@string/menu_notas"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_registrar"
+        android:title="@string/menu_registrar"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_salir"
+        android:title="@string/menu_salir"
+        app:showAsAction="never"/>
+
+</menu>
+    <!-- correcion -->
