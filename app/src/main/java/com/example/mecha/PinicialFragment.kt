@@ -47,7 +47,7 @@ class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallbac
 
         activarUbicacion()
     }
-
+//tiene que aparecer el mapa
     private fun activarUbicacion() {
         if (ActivityCompat.checkSelfPermission(
                 requireContext(),
