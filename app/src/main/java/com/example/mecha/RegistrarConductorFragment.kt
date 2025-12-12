@@ -104,6 +104,7 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
             ) {
                 tvmsj.text = "Completa todos los datos de los vehículos"
                 return
+                //continue
             }
 
             vehiculosList.add(
