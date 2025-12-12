@@ -47,14 +47,14 @@ class NotasFragment : Fragment(R.layout.fragment_notas) {
             } else {
                 val ok = db.insertarNota(t, d)
                 Toast.makeText(requireContext(),
-                    if (ok) {
+                    if (ok > 0) {
                         "Nota guardada"
                     } else {
                         "Error"
                     }, Toast.LENGTH_SHORT).show()
             }
         }
-
+/*
         btnEditar.setOnClickListener {
             val ok = db.updateNota(
                 edtTitulo.text.toString(),
@@ -75,6 +75,6 @@ class NotasFragment : Fragment(R.layout.fragment_notas) {
                 .replace(R.id.FragmentsInside, VerNotasFragment())
                 .addToBackStack(null)
                 .commit()
-        }
+        }*/
     }
 }

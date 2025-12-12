@@ -25,7 +25,7 @@ class VerNotasFragment : Fragment() {
 
         txtNotas = view.findViewById(R.id.txtNotas)
         db = NotasDBHelper(requireContext())
-
+/*
         val c = db.getNotas()
         val sb = StringBuilder()
 
@@ -34,6 +34,6 @@ class VerNotasFragment : Fragment() {
             sb.append("Descripción: ").append(c.getString(2)).append("\n\n")
         }
 
-        txtNotas.text = sb.toString()
+        txtNotas.text = sb.toString()*/
     }
 }
