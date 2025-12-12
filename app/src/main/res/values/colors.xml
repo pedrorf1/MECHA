@@ -15,7 +15,9 @@
     <color name="mecha_accent">#FFBE7B</color>
 
     <color name="mecha_white">#FFFFFF</color>
-    <color name="mecha_gray_dark">#222222</color>
     <color name="mecha_gray_light">#F5F5F5</color>
+    <color name="mecha_gray_dark">#222222</color>
+
+
 
 </resources>
