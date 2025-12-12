@@ -13,17 +13,13 @@ class NotasFragment : Fragment() {
 
     private lateinit var edtTitulo: EditText
     private lateinit var edtDescripcion: EditText
-    private lateinit var btnGuardar: Button
-    private lateinit var btnEditar: Button
-    private lateinit var btnBorrar: Button
-    private lateinit var btnVer: Button
     private lateinit var db: NotasDBHelper
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return inflater.inflate(R.layout.fragment_notas, container, false)
     }
 
@@ -32,45 +28,36 @@ class NotasFragment : Fragment() {
 
         edtTitulo = view.findViewById(R.id.edtTitulo)
         edtDescripcion = view.findViewById(R.id.edtDescripcion)
-        btnGuardar = view.findViewById(R.id.btnGuardar)
-        btnEditar = view.findViewById(R.id.btnEditar)
-        btnBorrar = view.findViewById(R.id.btnBorrar)
-        btnVer = view.findViewById(R.id.btnVer)
         db = NotasDBHelper(requireContext())
 
-        btnGuardar.setOnClickListener {
+        view.findViewById<Button>(R.id.btnGuardar).setOnClickListener {
             val t = edtTitulo.text.toString()
             val d = edtDescripcion.text.toString()
 
-            if (t.isEmpty() || d.isEmpty()) {
-                Toast.makeText(requireContext(), "Completa todo", Toast.LENGTH_SHORT).show()
-            } else {
-                val ok = db.insertNota(t, d)
-                Toast.makeText(requireContext(),
-                    if (ok) "Nota guardada" else "Error", Toast.LENGTH_SHORT).show()
+            if (db.insertNota(t, d)) {
+                Toast.makeText(context, "Nota guardada", Toast.LENGTH_SHORT).show()
+                edtTitulo.text.clear()
+                edtDescripcion.text.clear()
             }
         }
 
-        btnEditar.setOnClickListener {
-            val ok = db.updateNota(
-                edtTitulo.text.toString(),
-                edtDescripcion.text.toString()
-            )
-            Toast.makeText(requireContext(),
-                if (ok) "Nota actualizada" else "No existe", Toast.LENGTH_SHORT).show()
+        view.findViewById<Button>(R.id.btnEditar).setOnClickListener {
+            val t = edtTitulo.text.toString()
+            val d = edtDescripcion.text.toString()
+
+            if (db.updateNota(t, d)) {
+                Toast.makeText(context, "Nota actualizada", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        btnBorrar.setOnClickListener {
-            val ok = db.deleteNota(edtTitulo.text.toString())
-            Toast.makeText(requireContext(),
-                if (ok) "Nota eliminada" else "No existe", Toast.LENGTH_SHORT).show()
-        }
+        view.findViewById<Button>(R.id.btnBorrar).setOnClickListener {
+            val t = edtTitulo.text.toString()
 
-        btnVer.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.main_container, VerNotasFragment())
-                .addToBackStack(null)
-                .commit()
+            if (db.deleteNota(t)) {
+                Toast.makeText(context, "Nota eliminada", Toast.LENGTH_SHORT).show()
+                edtTitulo.text.clear()
+                edtDescripcion.text.clear()
+            }
         }
     }
 }

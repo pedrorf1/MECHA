@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="menu_inicio">Inicio</string>
     <string name="menu_notas">Notas</string>
     <string name="menu_registrar">Registrar</string>
     <string name="menu_salir">Salir</string>
+
 </resources>
+

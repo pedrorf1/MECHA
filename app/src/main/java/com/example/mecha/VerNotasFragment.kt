@@ -16,7 +16,7 @@ class VerNotasFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return inflater.inflate(R.layout.fragment_ver_notas, container, false)
     }
 
@@ -26,14 +26,20 @@ class VerNotasFragment : Fragment() {
         txtNotas = view.findViewById(R.id.txtNotas)
         db = NotasDBHelper(requireContext())
 
-        val c = db.getNotas()
+        val cursor = db.getNotas()
         val sb = StringBuilder()
 
-        while (c.moveToNext()) {
-            sb.append("Título: ").append(c.getString(1)).append("\n")
-            sb.append("Descripción: ").append(c.getString(2)).append("\n\n")
+        while (cursor.moveToNext()) {
+            sb.append("Título: ")
+                .append(cursor.getString(cursor.getColumnIndexOrThrow("titulo")))
+                .append("\n")
+
+            sb.append("Descripción: ")
+                .append(cursor.getString(cursor.getColumnIndexOrThrow("descripcion")))
+                .append("\n\n")
         }
 
+        cursor.close()
         txtNotas.text = sb.toString()
     }
 }
