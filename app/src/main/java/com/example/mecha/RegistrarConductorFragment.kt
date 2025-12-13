@@ -16,7 +16,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 //jusxsssaxwzxxz
 class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragment) {
-
+/*
     private lateinit var edtCorreo: EditText
     private lateinit var edtPassword: EditText
     private lateinit var edtNombre: EditText
@@ -143,5 +143,5 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
         )
 
         Volley.newRequestQueue(requireContext()).add(request)
-    }
+    }*/
 }

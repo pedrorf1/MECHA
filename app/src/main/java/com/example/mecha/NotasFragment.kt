@@ -30,12 +30,12 @@ class NotasFragment : Fragment(R.layout.fragment_notas) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        edtTitulo = view.findViewById(R.id.edtTitulo)
-        edtDescripcion = view.findViewById(R.id.edtDescripcion)
-        btnGuardar = view.findViewById(R.id.btnGuardar)
-        btnEditar = view.findViewById(R.id.btnEditar)
-        btnBorrar = view.findViewById(R.id.btnBorrar)
-        btnVer = view.findViewById(R.id.btnVer)
+        //edtTitulo = view.findViewById(R.id.edtTitulo)
+        //edtDescripcion = view.findViewById(R.id.edtDescripcion)
+        //btnGuardar = view.findViewById(R.id.btnGuardar)
+        //btnEditar = view.findViewById(R.id.btnEditar)
+        //btnBorrar = view.findViewById(R.id.btnBorrar)
+        //btnVer = view.findViewById(R.id.btnVer)
         db = NotasDBHelper(requireContext())
 
         btnGuardar.setOnClickListener {

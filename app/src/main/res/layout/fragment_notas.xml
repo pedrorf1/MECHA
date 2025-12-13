@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Título de la nota"
-        android:marginTop="20dp"
+        android:layout_marginTop="20dp"
         android:background="@android:drawable/edit_text" />
 
     <EditText
@@ -30,14 +30,14 @@
         android:gravity="top"
         android:inputType="textMultiLine"
         android:background="@android:drawable/edit_text"
-        android:marginTop="12dp" />
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar Nota"
-        android:marginTop="20dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#F06292"
         android:textColor="#FFFFFF" />
 
@@ -46,6 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Aquí aparecerá tu última nota guardada..."
-        android:marginTop="30dp"
+        android:layout_marginTop="30dp"
         android:textColor="#880E4F" />
 </LinearLayout>

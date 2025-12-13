@@ -18,25 +18,10 @@ class inappActivity : AppCompatActivity() {
             insets
         }
 
-        val btnInicio = findViewById<ImageButton>(R.id.btnInicio)
-        val btnNotas = findViewById<ImageButton>(R.id.btnNotas)
-        val btnBusscarM = findViewById<ImageButton>(R.id.btnBuscarM)
-
-        btnInicio.setOnClickListener {
-            val pinicialfragment = PinicialFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.FragmentsInside, pinicialfragment)
-                .addToBackStack(null)
-                .commit()
-        }
-
-        btnNotas.setOnClickListener {
-            val notasfragment = NotasFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.FragmentsInside, notasfragment)
-                .addToBackStack(null)
-                .commit()
-        }
+        val pinicialfragment = PinicialFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, pinicialfragment)
+            .commit()
 
 
     }
