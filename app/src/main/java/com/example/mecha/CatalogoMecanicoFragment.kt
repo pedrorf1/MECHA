@@ -19,7 +19,7 @@ class CatalogoMecanicoFragment :
     private lateinit var adapter: MecanicoAdapter
     private val listaMecanicos = ArrayList<Mecanico>()
 
-    private val url = "http://10.0.2.2/mecha/obtener_mecanicos.php"
+    private val url = "http://10.0.2.2/mecha/obtener_mecanico.php"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
