@@ -3,43 +3,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@color/white">
+    android:padding="20dp"
+    android:background="@color/mecha_gray_light">
 
+    <!-- TÍTULO -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="📝 Crear una Nota"
-        android:textSize="24sp"
+        android:text="Crear nota"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/rosa_o"/>
+        android:textColor="@color/mecha_gray_dark"
+        android:paddingBottom="16dp"/>
 
+    <!-- TÍTULO DE LA NOTA -->
     <EditText
         android:id="@+id/etTitulo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Título de la nota"/>
+        android:layout_height="50dp"
+        android:hint="Título de la nota"
+        android:background="@drawable/input_mecha"
+        android:padding="14dp"
+        android:textColor="@color/mecha_gray_dark"
+        android:textColorHint="#808080"
+        android:textSize="16sp"/>
 
+    <!-- CONTENIDO -->
     <EditText
         android:id="@+id/etContenido"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:hint="Escribe tu nota aquí..."
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
+        android:hint="Escribe tu nota aquí…"
+        android:background="@drawable/input_mecha"
+        android:padding="14dp"
         android:gravity="top"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:textColor="@color/mecha_gray_dark"
+        android:textColorHint="#808080"
+        android:textSize="16sp"/>
 
+    <!-- BOTÓN GUARDAR -->
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar Nota"
-        android:backgroundTint="@color/rosa_o2"
-        android:textColor="@color/white" />
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:text="GUARDAR NOTA"
+        android:textStyle="bold"
+        android:textColor="@color/mecha_white"
+        android:backgroundTint="@color/mecha_primary"/>
 
+    <!-- ÚLTIMA NOTA -->
     <TextView
         android:id="@+id/tvUltimaNota"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:text="Aquí aparecerá tu última nota guardada..."
-        android:textColor="@color/rosa_o3" />
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:text="Aquí aparecerá tu última nota guardada…"
+        android:textColor="@color/mecha_gray_dark"
+        android:background="@color/mecha_white"/>
+
 </LinearLayout>

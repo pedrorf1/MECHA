@@ -53,6 +53,46 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:tint="@color/mecha_gray_dark"
             tools:ignore="UseAppTint" />
+
+        <ImageButton
+            android:id="@+id/btnNotas"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/sharp_assignment_add_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="18dp"
+            android:tint="@color/mecha_gray_dark"
+            tools:ignore="UseAppTint" />
+
+        <ImageButton
+            android:id="@+id/btnAyuda"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/problem"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="18dp"
+            android:tint="@color/mecha_gray_dark"
+            tools:ignore="UseAppTint" />
+
+        <ImageButton
+            android:id="@+id/btnInfoPerfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/perfil"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="18dp"
+            android:tint="@color/mecha_gray_dark"
+            tools:ignore="UseAppTint" />
+
+        <ImageButton
+            android:id="@+id/btnBuscarM"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/buscar_mecanico"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="18dp"
+            android:tint="@color/mecha_gray_dark"
+            tools:ignore="UseAppTint" />
     </LinearLayout>
 
 

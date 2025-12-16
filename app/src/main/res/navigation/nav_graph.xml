@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pinicialFragment">
+
+    <fragment
+        android:id="@+id/pinicialFragment"
+        android:name="com.example.mecha.PinicialFragment">
+
+        <action
+            android:id="@+id/action_pinicial_to_notasFragment"
+            app:destination="@id/action_pinicial_to_notasFragment"/>
+
+        <action
+            android:id="@+id/action_pinicial_to_catalogo_mecanico"
+            app:destination="@id/action_pinicial_to_catalogo_mecanico"/>
+    </fragment>
+
+
+</navigation>

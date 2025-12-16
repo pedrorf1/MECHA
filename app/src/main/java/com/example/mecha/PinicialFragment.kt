@@ -11,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import androidx.navigation.fragment.findNavController
 
 class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallback {
 
@@ -19,15 +20,29 @@ class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallbac
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+            val btnNotas = view.findViewById<ImageButton>(R.id.btnNotas)
+            val btnBuscar = view.findViewById<ImageButton>(R.id.btnBuscarM)
+
+            btnNotas.setOnClickListener {
+                findNavController().navigate(R.id.action_pinicial_to_notasFragment)
+            }
+
+            btnBuscar.setOnClickListener {
+                findNavController().navigate(R.id.action_pinicial_to_catalogo_mecanico)
+            }
+
+
         val btnInicio = view.findViewById<ImageButton>(R.id.btnInicio)
-        val btnNotas = view.findViewById<ImageButton>(R.id.btnNotas)
+
         val btnAyuda = view.findViewById<ImageButton>(R.id.btnAyuda)
         val btnInfoPerfil = view.findViewById<ImageButton>(R.id.btnInfoPerfil)
-        val btnBuscarM = view.findViewById<ImageButton>(R.id.btnBuscarM)
+
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
