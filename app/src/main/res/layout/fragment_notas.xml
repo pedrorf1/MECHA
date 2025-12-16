@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#FFE4F0">
+    android:background="@color/white">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,15 +12,13 @@
         android:text="📝 Crear una Nota"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#C2185B" />
+        android:textColor="@color/rosa_o"/>
 
     <EditText
         android:id="@+id/etTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título de la nota"
-        android:layout_marginTop="20dp"
-        android:background="@android:drawable/edit_text" />
+        android:hint="Título de la nota"/>
 
     <EditText
         android:id="@+id/etContenido"
@@ -28,24 +26,20 @@
         android:layout_height="150dp"
         android:hint="Escribe tu nota aquí..."
         android:gravity="top"
-        android:inputType="textMultiLine"
-        android:background="@android:drawable/edit_text"
-        android:layout_marginTop="12dp" />
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar Nota"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#F06292"
-        android:textColor="#FFFFFF" />
+        android:backgroundTint="@color/rosa_o2"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/tvUltimaNota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:text="Aquí aparecerá tu última nota guardada..."
-        android:layout_marginTop="30dp"
-        android:textColor="#880E4F" />
+        android:textColor="@color/rosa_o3" />
 </LinearLayout>
