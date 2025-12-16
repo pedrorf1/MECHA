@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/mecha_gray_light">
 
     <LinearLayout
         android:orientation="vertical"
@@ -9,15 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- DATOS PERSONALES -->
+        <!-- BOTÓN CERRAR -->
         <Button
             android:id="@+id/btncerrarregcond"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:text="X"
-            android:backgroundTint="@color/teal_700"
-            android:textColor="@android:color/white"
-            android:layout_gravity="right"/>
+            android:textStyle="bold"
+            android:backgroundTint="@color/mecha_primary"
+            android:textColor="@color/mecha_white"
+            android:layout_gravity="end"/>
+
+        <!-- MENSAJE -->
         <TextView
             android:id="@+id/tvmsj"
             android:layout_width="wrap_content"
@@ -25,48 +29,84 @@
             android:padding="10dp"
             android:text=""
             android:textColor="@color/red"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
+        <!-- CORREO -->
         <EditText
             android:id="@+id/edtCorreo"
             android:hint="Correo"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:background="@drawable/input_mecha"
+            android:padding="14dp"
+            android:textColor="@color/mecha_gray_dark"
+            android:textColorHint="#808080"/>
 
+        <!-- CONTRASEÑA -->
         <EditText
             android:id="@+id/edtPassword"
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_mecha"
+            android:padding="14dp"
+            android:textColor="@color/mecha_gray_dark"
+            android:textColorHint="#808080"/>
 
+        <!-- NOMBRE -->
         <EditText
             android:id="@+id/edtNombre"
             android:hint="Nombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_mecha"
+            android:padding="14dp"
+            android:textColor="@color/mecha_gray_dark"
+            android:textColorHint="#808080"/>
 
+        <!-- APELLIDO -->
         <EditText
             android:id="@+id/edtApellido"
             android:hint="Apellido"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_mecha"
+            android:padding="14dp"
+            android:textColor="@color/mecha_gray_dark"
+            android:textColorHint="#808080"/>
 
+        <!-- TELÉFONO -->
         <EditText
             android:id="@+id/edtTelefono"
             android:hint="Número de teléfono"
             android:inputType="phone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_mecha"
+            android:padding="14dp"
+            android:textColor="@color/mecha_gray_dark"
+            android:textColorHint="#808080"/>
 
+        <!-- NÚMERO DE VEHÍCULOS -->
         <EditText
             android:id="@+id/edtNumVehiculos"
             android:hint="Número de vehículos"
             android:inputType="number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_mecha"
+            android:padding="14dp"
+            android:textColor="@color/mecha_gray_dark"
+            android:textColorHint="#808080"/>
 
+        <!-- CONTENEDOR VEHÍCULOS (NO TOCAR) -->
         <LinearLayout
             android:id="@+id/contenedorVehiculos"
             android:orientation="vertical"
@@ -74,19 +114,29 @@
             android:layout_height="wrap_content"
             android:paddingTop="20dp"/>
 
+        <!-- GENERAR VEHÍCULOS -->
         <Button
             android:id="@+id/btnGenerarVehiculos"
-            android:text="Generar vehículos"
+            android:text="GENERAR VEHÍCULOS"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/mecha_white"
+            android:backgroundTint="@color/mecha_primary"/>
 
+        <!-- REGISTRAR -->
         <Button
             android:id="@+id/btnRegistrar"
-            android:text="Registrar Conductor"
+            android:text="REGISTRAR CONDUCTOR"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"/>
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/mecha_white"
+            android:backgroundTint="@color/mecha_primary_dark"/>
 
     </LinearLayout>
 
 </ScrollView>
+
