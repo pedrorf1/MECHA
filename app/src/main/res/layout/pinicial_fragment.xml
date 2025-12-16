@@ -23,7 +23,7 @@
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡¡¡Bienvenido!!!"
+            android:text="MECHA"
             android:textStyle="bold"
             android:textSize="22sp"
             android:textColor="@color/mecha_white"/>
@@ -34,7 +34,7 @@
     <LinearLayout
         android:id="@+id/navBar"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="65dp"
         android:background="@color/mecha_white"
         android:gravity="center"
         android:paddingHorizontal="10dp"
@@ -45,42 +45,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:elevation="4dp">
 
-        <TextView
-            android:id="@+id/problemmsj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Necesitas un mecanico?"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:textColor="@color/mecha_primary_dark"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/botubi"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@color/mecha_white"
-        android:gravity="center"
-        android:paddingHorizontal="10dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        app:layout_constraintTop_toBottomOf="@id/navBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="4dp">
-
-
-        <Button
-            android:id="@+id/btnReP"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
-            android:text="Reportar Problema"
-            android:textSize="14sp"
-            android:textColor="@color/mecha_white"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/mecha_primary"/>
+        <ImageButton
+            android:id="@+id/btnInicio"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/home"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/mecha_gray_dark"
+            tools:ignore="UseAppTint" />
     </LinearLayout>
 
 

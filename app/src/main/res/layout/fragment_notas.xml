@@ -12,7 +12,7 @@
         android:text="📝 Crear una Nota"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/mecha_primary_dark"/>
+        android:textColor="@color/rosa_o"/>
 
     <EditText
         android:id="@+id/etTitulo"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar Nota"
-        android:backgroundTint="@color/mecha_primary"
+        android:backgroundTint="@color/rosa_o2"
         android:textColor="@color/white" />
 
     <TextView
@@ -41,5 +41,5 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:text="Aquí aparecerá tu última nota guardada..."
-        android:textColor="@color/mecha_primary" />
+        android:textColor="@color/rosa_o3" />
 </LinearLayout>
