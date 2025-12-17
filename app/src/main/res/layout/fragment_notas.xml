@@ -2,44 +2,92 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@color/white">
+    android:background="@color/mecha_gray_light"
+    android:padding="20dp"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtTituloPantalla"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📝 Crear una Nota"
-        android:textSize="24sp"
+        android:text="Notas"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="@color/mecha_primary_dark"/>
+        android:textColor="@color/mecha_gray_dark"
+        android:gravity="center"/>
 
     <EditText
-        android:id="@+id/etTitulo"
+        android:id="@+id/edtTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título de la nota"/>
+        android:hint="Título"
+        android:textColor="@color/mecha_gray_dark"
+        android:textColorHint="@color/gris_claro"
+        android:padding="16dp"
+        android:minHeight="48dp"
+        android:background="@android:drawable/edit_text"/>
 
     <EditText
-        android:id="@+id/etContenido"
+        android:id="@+id/edtDescripcion"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:hint="Escribe tu nota aquí..."
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:hint="Descripción"
+        android:textColor="@color/mecha_gray_dark"
+        android:textColorHint="@color/gris_claro"
         android:gravity="top"
-        android:inputType="textMultiLine" />
+        android:background="@android:drawable/edit_text"/>
 
-    <Button
-        android:id="@+id/btnGuardar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar Nota"
-        android:backgroundTint="@color/mecha_primary_dark"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvUltimaNota"
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Guardar"
+            android:backgroundTint="@color/mecha_primary"
+            android:textColor="@color/mecha_white"/>
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Editar"
+            android:backgroundTint="@color/mecha_primary"
+            android:textColor="@color/mecha_white"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:text="Aquí aparecerá tu última nota guardada..."
-        android:textColor="@color/mecha_primary_dark" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Borrar"
+            android:backgroundTint="@color/mecha_primary_dark"
+            android:textColor="@color/mecha_white"/>
+
+        <Button
+            android:id="@+id/btnVer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Ver"
+            android:backgroundTint="@color/mecha_accent"
+            android:textColor="@color/mecha_gray_dark"/>
+    </LinearLayout>
+
 </LinearLayout>
