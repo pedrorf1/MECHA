@@ -10,16 +10,10 @@
     <FrameLayout
         android:id="@+id/FragmentsInside"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/menuInferior" />
+        app:layout_constraintBottom_toTopOf="parent" />
 
-    <include
-        android:id="@+id/menuInferior"
-        layout="@layout/menu_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,9 @@ class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallbac
 
     private lateinit var mMap: GoogleMap
     private lateinit var btnRePro: Button
+    private lateinit var btnNotas: ImageButton
+    private lateinit var problem: ImageButton
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,6 +31,14 @@ class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallbac
         btnRePro = view.findViewById(R.id.btnRePro)
         btnRePro.setOnClickListener {
             boton()
+        }
+        btnNotas = view.findViewById(R.id.btnNotas)
+        btnNotas.setOnClickListener {
+            botonnotas()
+        }
+        problem = view.findViewById(R.id.problem)
+        problem.setOnClickListener {
+            botonrepp()
         }
     }
 
@@ -66,6 +77,22 @@ class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallbac
     }
 
     private fun boton(){
+        val reportarProblemaFragment = ReportarProblemaFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, reportarProblemaFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun botonnotas(){
+        val notasfragment = NotasFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, notasfragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun botonrepp(){
         val reportarProblemaFragment = ReportarProblemaFragment()
         parentFragmentManager.beginTransaction()
             .replace(R.id.FragmentsInside, reportarProblemaFragment)

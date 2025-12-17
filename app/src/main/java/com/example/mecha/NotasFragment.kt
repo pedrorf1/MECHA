@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 //
@@ -14,6 +15,9 @@ class NotasFragment : Fragment(R.layout.fragment_notas) {
     private lateinit var edtTitulo: EditText
     private lateinit var edtDescripcion: EditText
     private lateinit var db: NotasDBHelper
+    private lateinit var problem: ImageButton
+    private lateinit var btnHome: ImageButton
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -56,5 +60,31 @@ class NotasFragment : Fragment(R.layout.fragment_notas) {
                 edtDescripcion.text.clear()
             }
         }
+
+        problem = view.findViewById(R.id.problem)
+        problem.setOnClickListener {
+            botonrepp()
+        }
+
+        btnHome = view.findViewById(R.id.btnHome)
+        btnHome.setOnClickListener {
+            home()
+        }
+    }
+
+    private fun botonrepp(){
+        val reportarProblemaFragment = ReportarProblemaFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, reportarProblemaFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun home(){
+        val pinicialfragment = PinicialFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, pinicialfragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

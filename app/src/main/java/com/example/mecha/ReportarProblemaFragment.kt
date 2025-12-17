@@ -16,6 +16,8 @@ class ReportarProblemaFragment : Fragment() {
     private lateinit var etIdConductor: EditText
     private lateinit var etPlaca: EditText
     private lateinit var btnReportar: Button
+    private lateinit var btnHome: ImageButton
+    private lateinit var btnNotas: ImageButton
 
 
     @SuppressLint("MissingInflatedId")
@@ -48,7 +50,18 @@ class ReportarProblemaFragment : Fragment() {
             }
         }
 
+        btnHome = view.findViewById(R.id.btnHome)
+        btnHome.setOnClickListener {
+            home()
+        }
+
+        btnNotas = view.findViewById(R.id.btnNotas)
+        btnNotas.setOnClickListener {
+            botonnotas()
+        }
+
         return view
+
     }
 
     private fun reportarProblema() {
@@ -64,5 +77,21 @@ class ReportarProblemaFragment : Fragment() {
             Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT).show()
             return
         }
+    }
+
+    private fun home(){
+        val pinicialfragment = PinicialFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, pinicialfragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun botonnotas(){
+        val notasfragment = NotasFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, notasfragment)
+            .addToBackStack(null)
+            .commit()
     }
 }
