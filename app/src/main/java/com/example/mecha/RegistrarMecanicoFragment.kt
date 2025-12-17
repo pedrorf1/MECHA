@@ -12,7 +12,12 @@ import com.android.volley.toolbox.Volley
 
 class RegistrarMecanicoFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
         val v = inflater.inflate(R.layout.registrar_mecanico_fragment, container, false)
 
         val correo = v.findViewById<EditText>(R.id.correo)
@@ -24,23 +29,52 @@ class RegistrarMecanicoFragment : Fragment() {
         val avale = v.findViewById<EditText>(R.id.avale)
         val carro = v.findViewById<CheckBox>(R.id.carro)
         val moto = v.findViewById<CheckBox>(R.id.moto)
-        val btn = v.findViewById<Button>(R.id.registrarMecanico)
+        val btnRegistrar = v.findViewById<Button>(R.id.registrarMecanico)
 
-        btn.setOnClickListener {
+        btnRegistrar.setOnClickListener {
 
-            val especialidad =
-                when {
-                    carro.isChecked && moto.isChecked -> "Carro,Motocicleta"
-                    carro.isChecked -> "Carro"
-                    moto.isChecked -> "Motocicleta"
-                    else -> "Carro"
+            if (
+                correo.text.isEmpty() ||
+                contrasena.text.isEmpty() ||
+                nombre.text.isEmpty() ||
+                apellido.text.isEmpty() ||
+                telefono.text.isEmpty() ||
+                ubicacion.text.isEmpty() ||
+                avale.text.isEmpty()
+            ) {
+                Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            val especialidad = when {
+                carro.isChecked && moto.isChecked -> "Carro,Motocicleta"
+                carro.isChecked -> "Carro"
+                moto.isChecked -> "Motocicleta"
+                else -> {
+                    Toast.makeText(
+                        requireContext(),
+                        "Selecciona al menos una especialidad",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    return@setOnClickListener
                 }
+            }
 
-            val url = "http://10.0.2.2/registrar_mecanico.php"
+            val url = "http://10.0.2.2/mecha/registrar_mecanico.php"
 
-            val request = object : StringRequest(Method.POST, url,
-                { Toast.makeText(requireContext(), "Registro exitoso", Toast.LENGTH_LONG).show() },
-                { Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show() }
+            val request = object : StringRequest(
+                Request.Method.POST,
+                url,
+                { response ->
+                    Toast.makeText(requireContext(), response, Toast.LENGTH_LONG).show()
+                },
+                { error ->
+                    Toast.makeText(
+                        requireContext(),
+                        "Error Volley: ${error.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             ) {
                 override fun getParams(): MutableMap<String, String> {
                     val params = HashMap<String, String>()
@@ -58,6 +92,7 @@ class RegistrarMecanicoFragment : Fragment() {
 
             Volley.newRequestQueue(requireContext()).add(request)
         }
+
         return v
     }
 }
