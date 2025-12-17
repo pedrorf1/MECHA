@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
@@ -15,12 +16,19 @@ import com.google.android.gms.maps.SupportMapFragment
 class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private lateinit var btnRePro: Button
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        btnRePro = view.findViewById(R.id.btnRePro)
+        btnRePro.setOnClickListener {
+            boton()
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -55,4 +63,13 @@ class PinicialFragment : Fragment(R.layout.pinicial_fragment), OnMapReadyCallbac
                 e.printStackTrace()
             }
         }
-    }}
+    }
+
+    private fun boton(){
+        val reportarProblemaFragment = ReportarProblemaFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.FragmentsInside, reportarProblemaFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+}

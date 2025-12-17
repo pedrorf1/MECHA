@@ -36,7 +36,7 @@ class RegistrarMecanicoFragment : Fragment() {
                     else -> "Carro"
                 }
 
-            val url = "http://TU_IP/registrar_mecanico.php"
+            val url = "http://10.0.2.2/registrar_mecanico.php"
 
             val request = object : StringRequest(Method.POST, url,
                 { Toast.makeText(requireContext(), "Registro exitoso", Toast.LENGTH_LONG).show() },

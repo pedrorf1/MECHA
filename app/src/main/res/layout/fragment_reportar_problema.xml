@@ -21,18 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- ID DEL MECÁNICO SELECCIONADO -->
-    <TextView
-        android:id="@+id/tvIdMecanico"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="ID Mecánico: 0"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/mecha_primary"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- DESCRIPCIÓN -->
     <EditText
@@ -47,41 +35,12 @@
         android:gravity="top"
         android:textColor="@color/mecha_gray_dark"
         android:textColorHint="#808080"
-        app:layout_constraintTop_toBottomOf="@id/tvIdMecanico"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- ID MECÁNICO -->
-    <EditText
-        android:id="@+id/etIdMecanico"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:hint="ID del mecánico"
-        android:inputType="number"
-        android:background="@drawable/input_mecha"
-        android:padding="15dp"
-        android:textColor="@color/mecha_gray_dark"
-        app:layout_constraintTop_toBottomOf="@id/etDescripcion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- ID CONDUCTOR -->
-    <EditText
-        android:id="@+id/etIdConductor"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:hint="ID del conductor"
-        android:inputType="number"
-        android:background="@drawable/input_mecha"
-        android:padding="15dp"
-        android:textColor="@color/mecha_gray_dark"
-        app:layout_constraintTop_toBottomOf="@id/etIdMecanico"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- PLACA -->
     <EditText
@@ -91,25 +50,40 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
         android:hint="Placa del vehículo"
+        android:textColorHint="#808080"
         android:background="@drawable/input_mecha"
         android:padding="15dp"
         android:textColor="@color/mecha_gray_dark"
-        app:layout_constraintTop_toBottomOf="@id/etIdConductor"
+        app:layout_constraintTop_toBottomOf="@id/etDescripcion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/msjadvert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etPlaca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
 
     <!-- BOTÓN REPORTAR -->
     <Button
         android:id="@+id/btnReportarProblema"
-        android:layout_width="0dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_margin="16dp"
-        android:text="Reportar problema"
+        android:text="Siguiente"
         android:textStyle="bold"
         android:textColor="@color/mecha_white"
         android:backgroundTint="@color/mecha_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

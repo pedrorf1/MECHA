@@ -75,7 +75,7 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
 
     private fun registrarConductor() {
 
-        //val url = "http://IP_DEL_SERVIDOR/mecha/registrar_conductor.php"
+        val url = "http://10.0.2.2/mecha/Registrar_conductor.php"
 
         if (edtCorreo.text.isEmpty() ||
             edtPassword.text.isEmpty() ||
@@ -139,7 +139,7 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
             vehiculos = listaVehiculos
         )
 
-        Toast.makeText(requireContext(), "Conductor listo para guardar", Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
     }
 
 

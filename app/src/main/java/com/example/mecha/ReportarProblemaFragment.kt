@@ -1,5 +1,6 @@
 package com.example.mecha
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,8 @@ class ReportarProblemaFragment : Fragment() {
     private lateinit var etPlaca: EditText
     private lateinit var btnReportar: Button
 
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,45 +27,42 @@ class ReportarProblemaFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_reportar_problema, container, false)
 
         // Referencias
-        tvIdMecanico = view.findViewById(R.id.tvIdMecanico)
         etDescripcion = view.findViewById(R.id.etDescripcion)
-        etIdMecanico = view.findViewById(R.id.etIdMecanico)
-        etIdConductor = view.findViewById(R.id.etIdConductor)
         etPlaca = view.findViewById(R.id.etPlaca)
         btnReportar = view.findViewById(R.id.btnReportarProblema)
 
-        // Si viene el ID del mecánico desde otra pantalla
-        val idMecanicoRecibido = arguments?.getString("id_mecanico")
-        if (idMecanicoRecibido != null) {
-            tvIdMecanico.text = "ID Mecánico: $idMecanicoRecibido"
-            etIdMecanico.setText(idMecanicoRecibido)
-        }
 
         btnReportar.setOnClickListener {
             reportarProblema()
+            if (etDescripcion.text.toString().isNotEmpty() && etPlaca.text.toString().isNotEmpty()) {
+                val catalogomecanicoFragment = CatalogoMecanicoFragment()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.FragmentsInside, catalogomecanicoFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+            else{
+                val msjadvert = view?.findViewById<TextView>(R.id.msjadvert)
+                msjadvert?.text = "Completa todos los campos"
+                Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return view
     }
 
     private fun reportarProblema() {
+
+        val msjadvert = view?.findViewById<TextView>(R.id.msjadvert)
         val descripcion = etDescripcion.text.toString()
-        val idMecanico = etIdMecanico.text.toString()
-        val idConductor = etIdConductor.text.toString()
         val placa = etPlaca.text.toString()
 
-        if (descripcion.isEmpty() || idMecanico.isEmpty() ||
-            idConductor.isEmpty() || placa.isEmpty()
+
+        if (descripcion.isEmpty() || placa.isEmpty()
         ) {
+            msjadvert?.text = "Completa todos los campos"
             Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT).show()
             return
         }
-
-        // SIMULACIÓN (sin backend)
-        Toast.makeText(
-            requireContext(),
-            "Problema reportado correctamente",
-            Toast.LENGTH_LONG
-        ).show()
     }
 }
