@@ -25,6 +25,8 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
     private lateinit var btnGenerarVehiculos: Button
     private lateinit var btnRegistrar: Button
     private lateinit var tvmsj: TextView
+    private lateinit var btncerrarregcond: Button
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -43,11 +45,20 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
         btnGenerarVehiculos = view.findViewById(R.id.btnGenerarVehiculos)
         btnRegistrar = view.findViewById(R.id.btnRegistrar)
         tvmsj = view.findViewById(R.id.tvmsj)
+        btncerrarregcond = view.findViewById(R.id.btncerrarregcond)
+
+
 
         btnGenerarVehiculos.setOnClickListener { generarVehiculos() }
         btnRegistrar.setOnClickListener { registrarConductor() }
+        btncerrarregcond.setOnClickListener { cerrar() }
+
 
         return view
+    }
+
+    private fun cerrar(){
+        parentFragmentManager.popBackStack()
     }
 
     private fun generarVehiculos() {
@@ -83,9 +94,10 @@ class RegistrarConductorFragment : Fragment(R.layout.registrar_conductor_fragmen
         val request = object : StringRequest(
             Request.Method.POST, url,
             { response ->
-                if (response.trim() == "ok")
+                if (response.trim() == "ok") {
+                    parentFragmentManager.popBackStack()
                     Toast.makeText(requireContext(), "Registro exitoso", Toast.LENGTH_LONG).show()
-                else
+                }else
                     tvmsj.text = response
             },
             { tvmsj.text = "Error de conexión" }

@@ -30,6 +30,11 @@ class RegistrarMecanicoFragment : Fragment() {
         val carro = v.findViewById<CheckBox>(R.id.carro)
         val moto = v.findViewById<CheckBox>(R.id.moto)
         val btnRegistrar = v.findViewById<Button>(R.id.registrarMecanico)
+        val btncerrarregmec = v.findViewById<Button>(R.id.btncerrarregmec)
+
+        btncerrarregmec.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
 
         btnRegistrar.setOnClickListener {
 
@@ -66,6 +71,7 @@ class RegistrarMecanicoFragment : Fragment() {
                 Request.Method.POST,
                 url,
                 { response ->
+                    parentFragmentManager.popBackStack()
                     Toast.makeText(requireContext(), response, Toast.LENGTH_LONG).show()
                 },
                 { error ->
